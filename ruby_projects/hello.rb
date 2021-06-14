@@ -9,3 +9,5 @@ puts 'Hello World!'
 puts 'Hello World!'
 puts 'Hello World!'
 =end
+
+#以降、irbにて練習
