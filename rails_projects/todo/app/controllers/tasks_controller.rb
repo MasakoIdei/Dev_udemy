@@ -33,12 +33,17 @@ class TasksController < ApplicationController
 
   def destroy
     @task = Task.find(params[:id])
-    if @task.destroy
-      redirect_to root_path
-    else
-      render 'index'
-    end
+    @task.destroy
+    redirect_to root_path
   end
+
+    def toggle
+        # render nothing: true
+        head :no_content
+        @task = Task.find(params[:id])
+        @task.done = !@task.done
+        @task.save
+    end
 
 
   private
