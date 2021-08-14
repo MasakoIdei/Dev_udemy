@@ -3,6 +3,10 @@
 <p>
   <%= f.label :title %><br>
   <%= f.text_field :title%>
+  <!--もし、taskモデルで何かしらのエラーが発生している場合という意味-->
+  <% if @task.errors.any? %>
+  <%= @task.errors.messages[:title][0] %>
+  <% end %>
 </p>
 <p>
   <%= f.submit %>
